@@ -511,80 +511,125 @@
 
 
 // Кабинет интернет банкинга ---------------------------------------------------
-const account = {
-    balance: 0,
-    transactionsHistory: [],
+// const account = {
+//     balance: 0,
+//     transactionsHistory: [],
 
-    transaction: { // Создаем объект транзакции с двумя свойствами "положить и снять"
-        DEPOSIT: "deposit",
-        WITHDRAW: "withdraw",
-    },
+//     transaction: { // Создаем объект транзакции с двумя свойствами "положить и снять"
+//         DEPOSIT: "deposit",
+//         WITHDRAW: "withdraw",
+//     },
 
 
-    // Методы объекта account
-    createTransaction(amount, type) { // Функция для создание транзакции в виде объекта
-        const newTransaction = {
-            id: this.transactionsHistory.length + 1,
-            type,
-            amount,
-        }
+//     // Методы объекта account
+//     createTransaction(amount, type) { // Функция для создание транзакции в виде объекта
+//         const newTransaction = {
+//             id: this.transactionsHistory.length + 1,
+//             type,
+//             amount,
+//         }
 
-        return newTransaction;
-    },
+//         return newTransaction;
+//     },
 
-    deposit(amount) { // Функция депозит при пополнении
-        const newTr = this.createTransaction(amount, this.transaction.DEPOSIT);
+//     deposit(amount) { // Функция депозит при пополнении
+//         const newTr = this.createTransaction(amount, this.transaction.DEPOSIT);
 
-        this.transactionsHistory.push(newTr);
-        this.balance += amount;
-    },
+//         this.transactionsHistory.push(newTr);
+//         this.balance += amount;
+//     },
 
-    withdraw(amount) { //Функция снятие
-        if (this.balance < amount) {
-            console.error("Не достаточно денег!!!");
-            return;
-        }
+//     withdraw(amount) { //Функция снятие
+//         if (this.balance < amount) {
+//             console.error("Не достаточно денег!!!");
+//             return;
+//         }
 
-        const newTr = this.createTransaction(amount, this.transaction.WITHDRAW);
+//         const newTr = this.createTransaction(amount, this.transaction.WITHDRAW);
         
-        this.transactionsHistory.push(newTr);
-        this.balance -= amount;        
-    },
+//         this.transactionsHistory.push(newTr);
+//         this.balance -= amount;
+//     },
 
-    getBalance() {
-        return this.balance;
-    },
+//     getBalance() {
+//         return this.balance;
+//     },
 
-    getTransactionDeteils(ident) {
-        for (const transaction of this.transactionsHistory) {
-            if (transaction.id === ident) {
-                return transaction;
-            }            
-        };
+//     getTransactionDeteils(ident) {
+//         for (const transaction of this.transactionsHistory) {
+//             if (transaction.id === ident) {
+//                 return transaction;
+//             }
+//         };
 
-        console.warn(`Транзакции с идентификатором ${ident} не найдено`);
-        return null;
-    },
+//         console.warn(`Транзакции с идентификатором ${ident} не найдено`);
+//         return null;
+//     },
 
-    getTransactionTypeTotal(typeOfTransaction) {
-        let typeTotalValue = 0;
+//     getTransactionTypeTotal(typeOfTransaction) {
+//         let typeTotalValue = 0;
 
-        for (const transaction of this.transactionsHistory) {
-            if (transaction.type === typeOfTransaction) {
-                typeTotalValue += transaction.amount;
-            }
-        };
+//         for (const transaction of this.transactionsHistory) {
+//             if (transaction.type === typeOfTransaction) {
+//                 typeTotalValue += transaction.amount;
+//             }
+//         };
 
-        return typeTotalValue;
-    },
-};
+//         return typeTotalValue;
+//     },
+// };
 
-account.deposit(1000);
-account.deposit(10000);
-account.withdraw(3000);
-account.withdraw(2000);
-account.deposit(5000);
-// console.log(account.getBalance());
-// console.log(account.transactionsHistory);
-// console.log(account.getTransactionDeteils(4));
-console.log(account.getTransactionTypeTotal(account.transaction.DEPOSIT));
+// account.deposit(1000);
+// account.deposit(10000);
+// account.withdraw(3000);
+// account.withdraw(2000);
+// account.deposit(5000);
+// // console.log(account.getBalance());
+// // console.log(account.transactionsHistory);
+// // console.log(account.getTransactionDeteils(4));
+// console.log(account.getTransactionTypeTotal(account.transaction.DEPOSIT));
+
+
+
+
+
+// // Деструкция -------------------------------------------------------------------
+// const playlist = {
+//     tracks: ["a", "b", "c"],
+//     genre: "rock",
+//     tracksCount: 3,
+// };
+
+// const { tracks, genre } = playlist;
+// const [one, two, three] = playlist.tracks;
+
+// console.log(one, two);
+
+
+
+
+// Как из массива объектов перенести значения определенный свойств в массив ---------
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getAllPropValues(propName) {
+
+//     const allPropValues = [];
+  
+//     for (const prodact of products) {
+    
+//         const keys = Object.keys(prodact);
+    
+//         for (const key of keys) {
+//             if (key === propName) {
+//                 allPropValues.push(prodact[key]);
+//             };
+//         };    
+//     };
+  
+//   return allPropValues;
+// }
