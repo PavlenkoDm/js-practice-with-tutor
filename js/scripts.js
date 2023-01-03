@@ -628,8 +628,59 @@
 //             if (key === propName) {
 //                 allPropValues.push(prodact[key]);
 //             };
-//         };    
+//         };
 //     };
   
 //   return allPropValues;
 // }
+
+
+
+
+
+// Пример использования деструктуризатора массивов ----------------------------------------------
+// const book = {
+//     title: "Soprano",
+//     author: "Goblin",
+// };
+
+// console.log(Object.entries(book));
+
+// for (const [one, two] of Object.entries(book)) {
+//     console.log(one, two);
+// }
+
+
+
+// // Функция генерации ID -----------------------------------------------------------------------
+// function generateId() {
+//     return "_" + Math.random().toString(36).substr(2, 9);
+// };
+
+// console.log(generateId());
+
+
+
+
+// Метод генерации даты --------------------------------------------------------------------------
+// const numberDate = new Date(Date.now()); // Date.now() число даты в миллисекундах, начало от 0 (01 1970 3:00)
+// console.log(numberDate);
+
+
+
+
+// Пример синтаксиса для работы с новым объектом -------------------------------------------------
+// function fullName({ firstName, lastName, ...otherPropsObj }) {
+//     return {
+//         fullname: firstName + " " + lastName,
+//         ...otherPropsObj,
+//     };
+// }
+
+const name = "userName";
+
+const user = {
+    [name]: "Doris",
+};
+
+console.log(user);
