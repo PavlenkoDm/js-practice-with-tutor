@@ -677,10 +677,150 @@
 //     };
 // }
 
-const name = "userName";
 
-const user = {
-    [name]: "Doris",
+
+
+
+//  Пример корзины --------------------------------------------------------------------------------
+// const cart = {
+//     items: [],
+
+//     getItems() {
+//         return this.items;
+//     },
+
+//     add(product) {
+//         for (const item of this.items) {
+//             if (item.name === product.name) {
+//                 item.quantity += 1;
+//                 return;
+//             }
+//         }
+
+//         const newProduct = {
+//             ...product, //Распыляем свойства объекта product в объект newProduct
+//             quantity: 1,
+//         }
+
+//         this.items.push(newProduct);
+//     },
+
+//     remove(productName) {
+//         const { items } = this; // Вытянули свойство items в локальную переменную и положили ссылку на оригинальный массив
+
+//         for (let i = 0; i < items.length; i += 1) {
+//             const { name } = items[i];
+//             if (name === productName) {
+//                 console.log(`We found ${name}!!!`);
+//                 items.splice(i, 1);
+//                 return;
+//             };
+//         };
+
+//         return `You have not ${productName} in your cart!`;
+//     },
+
+//     clear() {
+//         this.items.length = 0;
+//     },
+
+//     countTotalPrice() {
+//         const { items } = this;
+//         let total = 0;
+
+//         for (const { price, quantity } of items) {
+//             total += price * quantity;
+//         }
+
+//         return total;
+//     },
+
+//     increaseQuantity(productName) {
+//         for (const item of this.items) {
+//             if (item.name === productName) {
+//                 item.quantity += 1;
+//                 return;
+//             }
+//         }
+//     },
+
+//     decreaseQuantity(productName) {
+//         for (const item of this.items) {
+//             if (item.name === productName) {
+//                 item.quantity -= 1;
+//                 return;
+//             }
+//         }
+//     },
+// }
+
+
+// cart.add({ name: "tomato", price: 70 });
+// cart.add({ name: "tomato", price: 70 });
+// cart.add({ name: "lemon", price: 30 });
+// cart.add({ name: "cherry", price: 50 });
+
+// // cart.remove("lemon");
+
+// // cart.clear();
+
+// console.table(cart.getItems());
+// console.log(cart.countTotalPrice());
+
+
+
+
+
+// Метод получения геолокации ------------------------------------------------------------------
+// const onGetPositionSuccess = (position) => {
+//     console.log(position);
+// };
+
+// const onGetPositionError = (error) => {
+//     console.log(error);
+// };
+
+// window.navigator.geolocation.getCurrentPosition(onGetPositionSuccess, onGetPositionError);
+
+
+
+
+
+// Функция фильтр для фильтрации массива ------------------------------------------------------
+const filter = function (newArray, callback) {
+    const filteredArray = [];
+
+    for (let item of newArray) {
+        
+        if (callback(item)) {
+            filteredArray.push(item);
+        }
+    }
+
+    return filteredArray;
 };
 
-console.log(user);
+const callbackFnOne = function (value) {
+    return value >= 3;
+};
+
+const callbackFnTwo = function (value) {
+    return value <= 4;
+};
+
+const fruits = [
+    {name: "grape", price: 100, quantity: 150},
+    {name: "lemon", price: 70, quantity: 105},
+    {name: "tomato", price: 30, quantity: 120}
+];
+
+const callbackFnTree = function (fruit) {
+    return fruit.quantity >= 110;
+};
+
+console.log(filter([1, 2, 3, 4, 5, 6], callbackFnOne));
+
+console.log(filter([1, 2, 3, 4, 5, 6, 8, 9], callbackFnTwo));
+
+console.log(filter(fruits, callbackFnTree))
+
