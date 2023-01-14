@@ -15,6 +15,9 @@
 
 
 
+
+
+
 // Чейнинг--------------------------------------------------------------------------------
 // let weight = "88,5";
 // weight = Number(weight.replace(",", ".")); // В даном случае идет замена одной запятой, что бы заменить все .replaceAll
@@ -25,6 +28,9 @@
 // const bmi = Number((weight / height ** 2).toFixed(1));
 
 // console.log(bmi); // toFixed обрезка до первого знака после запятой (в даном случае)
+
+
+
 
 
 // Оператор switch работает только когда идет строгое сравнение (===), для (><) if else------------------------------
@@ -53,6 +59,8 @@
 
 
 
+
+
 // // Переборка чисел, на четное и не четное------------------------
 // const min = 1;
 // const max = 10;
@@ -71,12 +79,16 @@
 
 
 
+
+
 //-------------------------------------------------------------------
 // const str = 'abcde';
 // // alert(str[0]);
 // // alert(str[1]);
 // // alert(str[str.length - 1]);
 // alert(str[0] + str[1] + str[str.length - 1]);
+
+
 
 
 
@@ -97,10 +109,14 @@
 
 
 
+
+
 //---------------------------------------------------------------------
 // const str = "string not starting with capital";
 // let newStr = str[0].toLocaleUpperCase() + str.slice(1);
 // console.log(newStr);
+
+
 
 
 
@@ -122,6 +138,8 @@
 
 
 
+
+
 //Видеоурок 2 -----------------------------------------------------------
 // const questionForUser = prompt("Какое официальное название JavaScript?");
 // const wrightAnswer = "ECMAScript";
@@ -136,6 +154,8 @@
 
 
 
+
+
 //Задача на отображение времени -----------------------------------------
 // const hours = 14;
 // const minutes = 0;
@@ -145,12 +165,16 @@
 
 
 
+
+
 // Задача на работу с сылками ----------------------------------------------
 // let link = "htts://my-site.com/about";
 // if (!link.endsWith("/") && link.includes("my-site")) { // Оператор ! конвертирует перед чем он стоит в Boolean и делает реверс обратное. !! (не не)
 //     link += "/";
 // }
 // console.log(link);
+
+
 
 
 
@@ -172,6 +196,8 @@
 
 
 
+
+
 // Массивы: добавление, удаление, замена элементов массива-------------------------
 // const newArrey = [4, 3, 2, 1, 9, 8, 7];
 // newArrey.splice(2, 0, 555, 388); // Добавление елементов в исходный массив.
@@ -187,6 +213,8 @@
 
 
 
+
+
 // Задача выбрать из массива самое маленькое число-----------------------------------
 // const numbers = [89, 3, 8, 200, 5, 2, 30];
 // let smallestNumber = numbers[0];
@@ -197,10 +225,13 @@
 
 
 
+
+
 //Задача пересшить строку в нижнем регистре с тире--------------------------------------
 // const frase = "Top ten benefits of React Framework";
 // const modifiedFrase = frase.toLowerCase().split(" ").join("-");// Чейнинг. То есть сначала строку делаем в нижнем регистре далее на результате делаем сплит в массив далее джоин соединяем в строку с тире.
 // console.log(modifiedFrase);
+
 
 
 
@@ -378,6 +409,7 @@
 
 
 
+
 // Функция вывода четных чисел из массива -------------------------------------
 // function getEvenNumbers(start, end) {
 //   newArray = [];
@@ -392,6 +424,7 @@
 // }
   
 // console.log(getEvenNumbers(6, 12));
+
 
 
 
@@ -416,6 +449,7 @@
 
 
 
+
 // Функция поиска самого большого числа в числовом массиве ---------------------------
 // function findLargestNumber(numbers) {
 //     console.log(numbers);
@@ -424,6 +458,7 @@
 // }
 
 // console.log(findLargestNumber([10, 15, 5, 11, 125, 30]));
+
 
 
 
@@ -441,6 +476,7 @@
 
 
 
+
 // Функция поиска факториала через рекурсию (когда функция вызывает саму себя) ----------
 // function factorial(number) {
 //     if (number === 1) return 1;
@@ -449,6 +485,7 @@
 // }
 
 // console.log(factorial(10));
+
 
 
 
@@ -506,6 +543,7 @@
 // const result = calcTotalPrice(stones, "Рубин");
 
 // console.log(result);
+
 
 
 
@@ -608,6 +646,7 @@
 
 
 
+
 // Как из массива объектов перенести значения определенный свойств в массив ---------
 // const products = [
 //   { name: "Radar", price: 1300, quantity: 4 },
@@ -652,6 +691,7 @@
 
 
 
+
 // // Функция генерации ID -----------------------------------------------------------------------
 // function generateId() {
 //     return "_" + Math.random().toString(36).substr(2, 9);
@@ -662,9 +702,11 @@
 
 
 
+
 // Метод генерации даты --------------------------------------------------------------------------
 // const numberDate = new Date(Date.now()); // Date.now() число даты в миллисекундах, начало от 0 (01 1970 3:00)
 // console.log(numberDate);
+
 
 
 
@@ -681,7 +723,7 @@
 
 
 
-//  Пример корзины --------------------------------------------------------------------------------
+// Пример корзины --------------------------------------------------------------------------------
 // const cart = {
 //     items: [],
 
@@ -786,41 +828,95 @@
 
 
 
-// Функция фильтр для фильтрации массива ------------------------------------------------------
-const filter = function (newArray, callback) {
-    const filteredArray = [];
+// //Функция фильтр для фильтрации массива ------------------------------------------------------
+// const filter = function (newArray, callback) {
+//     const filteredArray = [];
 
-    for (let item of newArray) {
+//     for (let item of newArray) {
         
-        if (callback(item)) {
-            filteredArray.push(item);
-        }
-    }
+//         if (callback(item)) {
+//             filteredArray.push(item);
+//         }
+//     }
 
-    return filteredArray;
-};
+//     return filteredArray;
+// };
 
-const callbackFnOne = function (value) {
-    return value >= 3;
-};
+// const callbackFnOne = value => value >= 3;
 
-const callbackFnTwo = function (value) {
-    return value <= 4;
-};
+// const callbackFnTwo = value => value <= 4;
 
-const fruits = [
-    {name: "grape", price: 100, quantity: 150},
-    {name: "lemon", price: 70, quantity: 105},
-    {name: "tomato", price: 30, quantity: 120}
-];
+// const callbackFnTree = fruit => fruit.quantity >= 110;
 
-const callbackFnTree = function (fruit) {
-    return fruit.quantity >= 110;
-};
+// const fruits = [
+//     {name: "grape", price: 100, quantity: 150},
+//     {name: "lemon", price: 70, quantity: 105},
+//     {name: "tomato", price: 30, quantity: 120}
+// ];
 
-console.log(filter([1, 2, 3, 4, 5, 6], callbackFnOne));
+// console.log(filter([1, 2, 3, 4, 5, 6], callbackFnOne));
 
-console.log(filter([1, 2, 3, 4, 5, 6, 8, 9], callbackFnTwo));
+// console.log(filter([1, 2, 3, 4, 5, 6, 8, 9], callbackFnTwo));
 
-console.log(filter(fruits, callbackFnTree))
+// console.log(filter(fruits, callbackFnTree))
+
+
+
+
+
+// Концепция замыкания в JS -------------------------------------------------------------------
+// const fnA = function (parameters) {
+//     const inVar = "Переменная внутри функции fnA";
+
+//     const innerFn = function () {
+//         console.log("Это внутренняя функция");
+//         console.log(inVar);
+//     };
+
+//     return innerFn;
+// };
+
+// const fnB = fnA(); // Когда вызывается функция fnA(), результатом ее работы вернется функция innerFn у которой есть доступ к области видимости родительской fnA. И когда нам нужно вызвать эту внутреннюю функцию, мы може вызвать ее с помощью fnB
+
+// const makeSheff = function (name) {
+//     const makeDish = function (dish) {
+//        return console.log(`Шеф ${name} готовит блюдо - ${dish}`);
+//     };
+
+//     return makeDish;
+// };
+
+// const mango = makeSheff("Mango");
+
+// console.log(mango("пирожки")); // Шеф Mango готовит блюдо - пирожки
+
+
+// Округлятор
+// const toRound = (places) => {
+//     return (number) => number.toFixed(places); // Неявный возврат, когда в стрелочной функции в теле только одна инструкция, тогда можно не указывать return (явный возврат)
+// };
+
+// const rounder2 = toRound(2);
+// const rounder3 = toRound(3);
+
+// console.log(rounder2(514.134));
+
+
+
+
+
+// Пример функции которая возвращает массив только с измененными парными числами ---------------------
+// function changeEven(numbers, value) {
+  
+//   const newArray = [];
+  
+//     numbers.forEach(number => number % 2 === 0 ? newArray.push(number + value) : newArray.push(number));
+
+//   return newArray;
+  
+// }
+
+// console.log(changeEven([1, 2, 3, 4, 5], 10));
+
+
 
