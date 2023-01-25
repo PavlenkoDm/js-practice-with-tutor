@@ -920,3 +920,331 @@
 
 
 
+
+
+//------------------- Занятие с ментором ---------------------------------------
+// const studentRecords = [
+//   { name: "John", id: 123, marks: 98 },
+//   { name: "Baba", id: 101, marks: 23 },
+//   { name: "yaga", id: 200, marks: 45 },
+//   { name: "Wick", id: 115, marks: 75 },
+// ];
+
+// const students = studentRecords
+//   .map((student) => {
+//     if (student.marks < 50) {
+//       student.marks += 15;
+//     }
+//     return student;
+//   })
+//   .filter((student) => student.marks > 50)
+//   .reduce((total, { marks }) => (total += marks), 0);
+
+// console.log(students);
+
+
+
+
+
+
+// var litmir = [
+//   { author: "Хэленка", title: "Улетела сказка" },
+//   { author: "Коул Кресли", title: "Восстание Аркан" },
+//   { author: "Райчел Мид", title: "Золотая лилия" },
+// ];
+
+// function propertyValue(array, key){
+//     const newArray = [];
+//     array.forEach(item => newArray.push(item[key]))
+//     return newArray
+// }
+
+// console.log(propertyValue(litmir, "title")); // Улетела сказка,Восстание Аркан,Золотая лилия
+// console.log(propertyValue(litmir, "author")); // Хэленка,Коул Кресли,Райчел Мид
+
+
+
+
+// const numbers = [64, 49, 36, 25, 16];
+// const myMap = (array, callback) => {
+//     const newArray = [];
+//     for (const item of array) {
+//         newArray.push(callback(item))
+//     }
+//     return newArray
+
+// }
+
+// const multiplay = function(value) {
+//     return value * 2;
+// }
+
+// console.log(myMap(numbers, multiplay));
+
+
+
+
+// const makeProduct = (name, price, callback) => {
+//     const newObj = {};
+//     newObj.name = name;
+//     newObj.price = price;
+//     newObj.id = Date.now();
+//     callback(newObj);
+// };
+
+// const showProduct = (product) => {
+//     console.log(product)
+// };
+
+// makeProduct("tomato", 255, showProduct);
+
+
+
+//Замыкание
+// const makeShef = (shefName) => {
+//   return (dish) => {
+//     console.log(`${shefName} is cooking ${dish}`)
+//   }
+// };
+
+// const makeDish = makeShef("Mango");
+
+// makeDish("Borshch")
+// makeDish("Sushi")
+
+
+
+
+// const makeCounter = () => {
+//     let item = 0
+//     return function(){
+//         item += 1
+//         return item
+        
+//     }
+// };
+
+// const counter = makeCounter();
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+
+
+// console.log(typeof(null));
+// console.log(typeof([]));
+// console.log(typeof({}));
+// console.log(typeof(66));
+// console.log(typeof("66"));
+
+// const isPlainObject = (item) => {
+//   return typeof(item) ==="object" && item!==null && !Array.isArray(item)
+// }
+
+// console.log(isPlainObject({ a: 1 })); // true
+// console.log(isPlainObject([])); // false
+// console.log(isPlainObject(null)); // false
+
+
+
+
+
+//-------------------- Задачка про камни ---------------------------------------------------------------
+// const chopShop = {
+//     stones: [
+//         {name: "Diamond", price: 1400, quantity: 3},
+//         {name: "Emerald", price: 1000, quantity: 5},
+//         {name: "Sapphire", price: 700, quantity: 10},
+//         {name: "Ruby", price: 2000, quantity: 2}
+//     ],
+
+//     calcTotalPrice(stoneName) {
+//         const currentStone = this.stones.find(stone => stoneName === stone.name)
+//         return currentStone.price * currentStone.quantity;
+//     },
+
+//     isStonePresent(stoneName) {
+//         return this.stones.some(stone => stone.name === stoneName);
+//     }
+// };
+
+// console.log(chopShop.calcTotalPrice("Diamond"));
+// console.log(chopShop.isStonePresent("Ruby"));
+
+
+
+
+
+//---------- Функция конструктор ------------------------------------------------------
+// const Car = function (config = {}) { // Поставим параметр по умолчанию что-бы не выдавало ошибки при не передаче аргументов.
+//     const { brand, model, price } = config; // Делаем деструктуризацию, или в самом пареметре делаем ее ({ brand, model, price } = {}).
+    
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+// }
+
+// Car.prototype.changePrice = function(newPrice) {// Мы закидываем функцию изменения цены в автоматический прототип из которого ее возмет экземпляр
+//     this.price = newPrice;
+// }
+
+// const myCar = new Car({ brand: "Audi", model: "Q5", price: 20000 });
+// const myCar2 = new Car({ brand: "BMW", model: "X5", price: 30000 });
+
+// console.log(myCar);
+
+// myCar.changePrice(50000); // Функция из прототипа вызвана в контексте объекта myCar
+// console.log(myCar);
+
+
+
+
+
+
+//------------- Синтаксис класса. То же самое что и выше, но немного измененное --------------------
+// class Car {
+//     static newProp = "I am static property"; // Статическое свойство
+
+//     static statMethod() {
+//         return 100 + 257;
+//     }
+
+//     #privateProp = "This is private string";
+
+//     publicProp = "I am pablic prop"; // Публичное свойство и оно идет на экземпляр.
+
+//     constructor({brand, model, price} = {}) {
+//         this.brand = brand;
+//         this.model = model;
+//         this.price = price;
+//     }
+
+//     changePrice(value) {// Эта функция под капотом идет на прототип Car.prototype
+//         this.price = value;
+//     }
+
+//     getPrivProp() {
+//         return this.#privateProp += ". Hello!!";
+//     }
+
+//     get carModel() { // Имя геттера не может называться так же как и свойство.
+//         return this.model;
+//     }
+
+//     set carModel(newModel) {
+//         return this.model = newModel;
+//     }
+// }
+
+// const myCar = new Car({ brand: "Audi", model: "Q5", price: 20000 });
+// const myCar2 = new Car({ brand: "BMW", model: "X5", price: 30000 });
+// // console.log(myCar);
+
+// // myCar.changePrice(50000);
+// // console.log(myCar);
+
+// // console.log(Car.newProp); // Лог статического свойства
+// // console.log(Car.statMethod());
+// // console.log(myCar.getPrivProp());
+
+// console.log(myCar.carModel); // Вызов геттера
+// myCar.carModel = "Q7"; // Вызов сеттера, в данном случае Q7 передается аргументом в функцию сеттер.
+// console.log(myCar.carModel);
+
+
+
+
+
+// //------------------ Наследование в классах на примере героев игры ---------------------------------
+// class Herro {
+//     constructor({ name = "XYZ", xp = 0 } = {}) {
+//         this.name = name;
+//         this.xp = xp;
+//     }
+
+//     gainXP(amount) {
+//         return this.xp += amount;
+//     }
+// }
+
+// class Warrior extends Herro {
+//     constructor(config, { weapon } = {}) {
+//         super(config); // Обязательно вызывается конструктор родителя в конструкторе ребенка что бы небыло ошибки и в него закидывается аргументы как для родительского класса все остальное нет
+//         this.weapon = weapon;
+//     }
+// }
+
+// const mango = new Warrior({ name: "Mango", xp: 1000 }, { weapon: "sword" });
+// mango.gainXP(500);
+
+// console.log(mango);
+
+// console.log(mango.__proto__ === Warrior.prototype);
+// console.log(Object.getPrototypeOf(mango) === Warrior.prototype);
+// console.log(Object.getPrototypeOf(Warrior.prototype) === Herro.prototype);
+
+
+
+
+
+
+//--------------------- DOM создание кнопок с данными из массива объектов ----------------------------
+// const colorPickerOptions = [
+//     {label: "red", color: "#f44336"},
+//     {label: "green", color: "#4caf50"},
+//     {label: "blue", color: "#2196f3"}
+// ];
+
+// const makeColorPickerOptions = (options) => {
+//     return options.map(option => {
+//         const buttonEl = document.createElement("button");
+//         buttonEl.type = "button";
+//         buttonEl.classList.add("color-picker__option");
+//         buttonEl.textContent = option.label;
+//         buttonEl.style.backgroundColor = option.color;
+        
+//         return buttonEl; // Этот ретерн нужен для того что бы в новый массив вернуть созданный элемент
+//     });
+// };
+
+// const colorPickerArr = makeColorPickerOptions(colorPickerOptions);
+// const cpButtonContainer = document.createElement("div");
+// cpButtonContainer.append(...colorPickerArr);
+// const mainContainer = document.querySelector("body");
+// mainContainer.appendChild(cpButtonContainer);
+
+
+
+
+
+//---------------------- DOM карточка товара по объекту из бекэнда --------------------------
+const product = {
+    name: "Rotor",
+    description: "lore5",
+    price: 2000,
+    available: true,
+    onSale: true,
+}
+
+
+const makeProductCard = (someProduct) => {
+    const productContainerEl = document.createElement("article");
+    productContainerEl.classList.add("product");
+
+    const productTitleEl = document.createElement("h2");
+    productTitleEl.textContent = someProduct.name;
+    productTitleEl.classList.add("product__name");    
+
+    const productDescriptionEl = document.createElement("p");
+    productDescriptionEl.textContent = someProduct.description;
+    productDescriptionEl.classList.add("product_descr");
+    
+    const productPriceEl = document.createElement("p");
+    productPriceEl.textContent = `Цена: ${someProduct.price}`;
+    productPriceEl.classList.add("product_price");
+
+    productContainerEl.append(productTitleEl, productDescriptionEl, productPriceEl);
+    return productContainerEl;
+};
+
+console.log(makeProductCard(product));
