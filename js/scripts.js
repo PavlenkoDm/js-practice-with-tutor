@@ -1218,33 +1218,33 @@
 
 
 //---------------------- DOM карточка товара по объекту из бекэнда --------------------------
-const product = {
-    name: "Rotor",
-    description: "lore5",
-    price: 2000,
-    available: true,
-    onSale: true,
-}
+// const product = {
+//     name: "Rotor",
+//     description: "lore5",
+//     price: 2000,
+//     available: true,
+//     onSale: true,
+// }
 
 
-const makeProductCard = (someProduct) => {
-    const productContainerEl = document.createElement("article");
-    productContainerEl.classList.add("product");
+// const makeProductCard = (someProduct) => {
+//     const productContainerEl = document.createElement("article");
+//     productContainerEl.classList.add("product");
 
-    const productTitleEl = document.createElement("h2");
-    productTitleEl.textContent = someProduct.name;
-    productTitleEl.classList.add("product__name");    
+//     const productTitleEl = document.createElement("h2");
+//     productTitleEl.textContent = someProduct.name;
+//     productTitleEl.classList.add("product__name");    
 
-    const productDescriptionEl = document.createElement("p");
-    productDescriptionEl.textContent = someProduct.description;
-    productDescriptionEl.classList.add("product_descr");
+//     const productDescriptionEl = document.createElement("p");
+//     productDescriptionEl.textContent = someProduct.description;
+//     productDescriptionEl.classList.add("product_descr");
     
-    const productPriceEl = document.createElement("p");
-    productPriceEl.textContent = `Цена: ${someProduct.price}`;
-    productPriceEl.classList.add("product_price");
+//     const productPriceEl = document.createElement("p");
+//     productPriceEl.textContent = `Цена: ${someProduct.price}`;
+//     productPriceEl.classList.add("product_price");
 
-    productContainerEl.append(productTitleEl, productDescriptionEl, productPriceEl);
-    return productContainerEl;
-};
+//     productContainerEl.append(productTitleEl, productDescriptionEl, productPriceEl);
+//     return productContainerEl;
+// };
 
-console.log(makeProductCard(product));
+// console.log(makeProductCard(product));
