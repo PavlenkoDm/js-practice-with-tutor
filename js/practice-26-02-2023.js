@@ -125,6 +125,7 @@
 const frameworks = ['React', 'Vue', 'Angular'];
 
 const getRandomDelay = () => Math.ceil(Math.random() * 2000);
+console.log(getRandomDelay());
 
 const promiseArr = frameworks.map((technology) => {
     return new Promise((res, rej) => {
