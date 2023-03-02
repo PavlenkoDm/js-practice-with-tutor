@@ -1079,3 +1079,11 @@
 
 // updateRecords(recordCollection, 5439, 'artist', 'ABBA');
 // updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me");
+
+const obj = {
+    age: 15,
+    name: "boris",
+    car: true
+}
+
+console.log(typeof JSON.stringify(obj))
