@@ -1,0 +1,69 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Last Kingdom",
+      "author": "Bernard Cornuel",
+      "genres": [
+        "adventures"
+      ],
+      "rating": 8.38
+    },
+    {
+      "id": 2,
+      "title": "On the shore of calm waters",
+      "author": "Robert Shekly",
+      "genres": [
+        "fantastic"
+      ],
+      "rating": 8.51
+    },
+    {
+      "id": 3,
+      "title": "Ghost Eater",
+      "author": "Robert Shekly",
+      "genres": [
+        "horror",
+        "mystic"
+      ],
+      "rating": 7.94
+    },
+    {
+      "id": 4,
+      "title": "Unmasked Rogue",
+      "author": "Franz Kafka",
+      "genres": [
+        "classic"
+      ],
+      "rating": 6.62
+    },
+    {
+      "id": 5,
+      "title": "With fire and sword",
+      "author": "Jegi Hofmann",
+      "genres": [
+        "history"
+      ],
+      "rating": 9.35
+    },
+    {
+      "title": "Test Book",
+      "author": "Me",
+      "genres": [
+        "JS"
+      ],
+      "rating": 10.1,
+      "id": 6
+    },
+    {
+      "title": "Test Book CSS",
+      "author": "Me",
+      "genres": [
+        "CSS"
+      ],
+      "rating": 9.58,
+      "id": 7
+    } 
+    
+  ]
+}
