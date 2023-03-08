@@ -48,7 +48,7 @@ function addBook(book) {
     .then(console.log);
 }
 
-addBook(newBook);
+
 
 //Update - method PUT and Putch ======================================================//
 const newUpdateBook = {
@@ -58,7 +58,7 @@ const newUpdateBook = {
 
 function updateBookByID(updateObj = {}, bookID = 0) {
     const options = {
-        method: "PATCH",
+        method: 'PATCH',
         headers: {
             "Content-Type": "application/json"
         },
@@ -69,3 +69,15 @@ function updateBookByID(updateObj = {}, bookID = 0) {
     .then((response) => response.json());
 }
 
+
+
+//Delete - method DELETE ==============================================================//
+function deleteBookByID(bookID) {
+    const options = {
+        method: 'DELETE'
+    }
+    return fetch(`${BASE_URL}${bookID}`, options)
+    .then((response) => response.json());
+}
+
+// deleteBookByID(8).then(console.log);

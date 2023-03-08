@@ -72,42 +72,6 @@
       ],
       "rating": 9.58,
       "id": 8
-    },
-    {
-      "title": "Test Book CSS",
-      "author": "Me",
-      "genres": [
-        "Node-JS"
-      ],
-      "rating": 9.58,
-      "id": 9
-    },
-    {
-      "title": "Test Book CSS",
-      "author": "Me",
-      "genres": [
-        "Node-JS"
-      ],
-      "rating": 9.58,
-      "id": 10
-    },
-    {
-      "title": "Test Book CSS",
-      "author": "Me",
-      "genres": [
-        "Node-JS"
-      ],
-      "rating": 9.58,
-      "id": 11
-    },
-    {
-      "title": "Test Book CSS",
-      "author": "Me",
-      "genres": [
-        "Node-JS"
-      ],
-      "rating": 9.58,
-      "id": 12
     }
   ]
 }
