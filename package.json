@@ -11,6 +11,6 @@
   },
   "scripts": {
     "build": "babel src -d dist",
-    "server": "json-server --watch db.json"
+    "server": "json-server --watch db.json --port 4040 --delay 500"
   }
 }

@@ -1,8 +1,8 @@
-const BASE_URL = "http://localhost:3000/books/";
+const BASE_URL = "http://localhost:4040/";
 
 //Read - method GET =============================================================//
 function fetchBooks() {
-   return fetch(`${BASE_URL}`)
+   return fetch(`${BASE_URL}books/`)
     .then((response) => {
         if (!response.ok) {
             throw new Error(response.status);
@@ -13,7 +13,7 @@ function fetchBooks() {
 }
 
 function fetchBookById(bookID) {
-   return fetch(`${BASE_URL}${bookID}`)
+   return fetch(`${BASE_URL}books/${bookID}`)
     .then((response) => {
         if (!response.ok) {
             throw new Error(response.status);
@@ -43,7 +43,7 @@ function addBook(book) {
         body: JSON.stringify(book)
     }
 
-    return fetch(`${BASE_URL}`, options)
+    return fetch(`${BASE_URL}books/`, options)
     .then((response) => response.json())
     .then(console.log);
 }
@@ -65,7 +65,7 @@ function updateBookByID(updateObj = {}, bookID = 0) {
         body: JSON.stringify(updateObj)
     }
 
-    return fetch(`${BASE_URL}${bookID}`, options)
+    return fetch(`${BASE_URL}books/${bookID}`, options)
     .then((response) => response.json());
 }
 
@@ -76,8 +76,7 @@ function deleteBookByID(bookID) {
     const options = {
         method: 'DELETE'
     }
-    return fetch(`${BASE_URL}${bookID}`, options)
+    return fetch(`${BASE_URL}books/${bookID}`, options)
     .then((response) => response.json());
 }
 
-// deleteBookByID(8).then(console.log);
