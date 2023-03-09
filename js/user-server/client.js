@@ -1,8 +1,7 @@
-import { UserServer, json, stringify } from "./server";
+// import { UserServer, json, stringify } from "./server";
 
-const server = new UserServer();
+// const server = new UserServer();
 
-server.fetch('https://custom-server/api/v1/users')
-    .then((resolve) => {
-        console.log(json(resolve))
-    });
+
+// server.fetch(UserServer.USERS_URL).then((resolve) => {console.log(json(resolve))});
+
